@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   # CREATE
   get("/comments/new", { :controller => "comments", :action => "new_form" })
   post("/create_comment", { :controller => "comments", :action => "create_row" })
+  post("/create_comment_from_trip", { :controller => "comments", :action => "create_row_from_trip" })
 
   # READ
   get("/comments", { :controller => "comments", :action => "index" })
@@ -49,6 +50,7 @@ Rails.application.routes.draw do
   # CREATE
   get("/likes/new", { :controller => "likes", :action => "new_form" })
   post("/create_like", { :controller => "likes", :action => "create_row" })
+  post("/create_like_from_trip", { :controller => "likes", :action => "create_row_from_trip" })
 
   # READ
   get("/likes", { :controller => "likes", :action => "index" })

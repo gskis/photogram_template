@@ -1,0 +1,37 @@
+<!-- Form comment start -->
+<form action="/create_comment_from_trip" method="post">
+<!-- Form comment end -->
+
+  <!-- Label and input for body start -->
+  <div class="form-group">
+    <label for="body">
+      Body
+    </label>
+
+    <!-- Input for body start -->
+    <textarea id="body" name="body" class="form-control" rows="3"><%= @comment.body %></textarea>
+    <!-- Input for body end -->
+  </div>
+  <!-- Label and input for body end -->
+
+  <!-- Label and input for commenter_id start -->
+  <div class="form-group">
+    <label for="commenter_id">
+      Commenter
+    </label>
+
+    <!-- Input for commenter_id start -->
+    <input type="text" id="commenter_id" name="commenter_id" class="form-control" value="<%= @comment.commenter_id %>">
+    <!-- Input for commenter_id end -->
+  </div>
+  <!-- Label and input for commenter_id end -->
+
+  <!-- Label and input for trip_id start -->
+  <!-- Input for trip_id start -->
+  <input type="hidden" name="trip_id" value="<%= @trip.id %>">
+  <!-- Input for trip_id end -->
+
+  <button class="btn btn-block btn-outline-secondary">
+    Create comment
+  </button>
+</form>
