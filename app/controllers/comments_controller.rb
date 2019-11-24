@@ -10,7 +10,7 @@ class CommentsController < ApplicationController
   end
 
   def index
-    @comments = Comment.all
+    @comments = current_user.comments.page(params[:page]).per(10)
 
     render("comment_templates/index.html.erb")
   end
