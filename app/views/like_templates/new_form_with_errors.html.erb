@@ -1,4 +1,3 @@
-<!-- Validation failure messages -->
 <% if @like.present? %>
   <% if @like.errors.any? %>
     <% @like.errors.full_messages.each do |message| %>
@@ -16,27 +15,17 @@
 
 <hr>
 
-<!-- Form like start -->
 <form action="/create_like" method="post">
-<!-- Form like end -->
 
-  <!-- Label and input for user_id start -->
-  <!-- Input for "user_id" start -->
   <input type="hidden" name="user_id" value="<%= current_user.id %>">
-  <!-- Input for "user_id" end -->
-  <!-- Label and input for user_id end -->
 
-  <!-- Label and input for photo_id start -->
   <div class="form-group">
     <label for="photo_id">
       Photo
     </label>
 
-    <!-- Input for photo_id start -->
     <%= select_tag(:photo_id, options_from_collection_for_select(Trip.all, :id, :country_name, @like.photo_id), :class => "form-control") %>
-    <!-- Input for photo_id end -->
   </div>
-  <!-- Label and input for photo_id end -->
 
   <button class="btn btn-block btn-outline-secondary">
     Create like

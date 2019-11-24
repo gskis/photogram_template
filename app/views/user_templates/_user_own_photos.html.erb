@@ -10,11 +10,9 @@
   <ul class="list-group list-group-flush">
     <% @user.own_photos.each do |trip| %>
       <li class="list-group-item d-flex align-items-center justify-content-between">
-        <!-- Show link start -->
         <a href="/trips/<%= trip.id %>">
           <%= trip.country_name %>
         </a>
-        <!-- Show link end -->
 
       </li>
     <% end %>

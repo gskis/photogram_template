@@ -10,11 +10,9 @@
   <ul class="list-group list-group-flush">
     <% @user.likes.each do |like| %>
       <li class="list-group-item d-flex align-items-center justify-content-between">
-        <!-- Show link start -->
         <a href="/likes/<%= like.id %>">
           <%= like.created_at %>
         </a>
-        <!-- Show link end -->
 
       </li>
     <% end %>

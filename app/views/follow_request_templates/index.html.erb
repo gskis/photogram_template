@@ -10,17 +10,13 @@
   </div>
 </div>
 
-<!-- Ransack Code start -->
 <div class="row">
   <div class="col-md-12 mb-3">
     <%= render partial: "follow_request_templates/follow_requests_search_form" %>
   </div>
 </div>
-<!-- Ransack Code end -->
 
-<!-- Location Map Code start -->
 
-<!-- Location Map Code end -->
 
 <hr>
 
@@ -54,13 +50,10 @@
 
       <% @follow_requests.each do |follow_request| %>
       <tr>
-        <!-- Display follow_request.id start -->
         <td>
           <%= follow_request.id %>
         </td>
-        <!-- Display follow_request.id end -->
 
-        <!-- Display follow_request.sender_id start -->
         <td>
           <% if follow_request.sender.present? %>
             <a href="/users/<%= follow_request.sender.id %>">
@@ -68,9 +61,7 @@
             </a>
           <% end %>
         </td>
-        <!-- Display follow_request.sender_id end -->
 
-        <!-- Display follow_request.recipient_id start -->
         <td>
           <% if follow_request.recipient.present? %>
             <a href="/users/<%= follow_request.recipient.id %>">
@@ -78,19 +69,14 @@
             </a>
           <% end %>
         </td>
-        <!-- Display follow_request.recipient_id end -->
 
-        <!-- Display follow_request.created_at start -->
         <td>
           <%= time_ago_in_words(follow_request.created_at) %> ago
         </td>
-        <!-- Display follow_request.created_at end -->
 
-        <!-- Display follow_request.updated_at start -->
         <td>
           <%= time_ago_in_words(follow_request.updated_at) %> ago
         </td>
-        <!-- Display follow_request.updated_at end -->
 
         <td>
           <a href="/follow_requests/<%= follow_request.id %>">

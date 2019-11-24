@@ -1,4 +1,3 @@
-<!-- Validation failure messages -->
 <% if @trip.present? %>
   <% if @trip.errors.any? %>
     <% @trip.errors.full_messages.each do |message| %>
@@ -16,75 +15,49 @@
 
 <hr>
 
-<!-- Form trip start -->
 <form action="/create_trip" method="post" enctype="multipart/form-data">
-<!-- Form trip end -->
 
-  <!-- Label and input for country_name start -->
   <div class="form-group">
     <label for="country_name">
       Country name
     </label>
 
-    <!-- Input for country_name start -->
     <input type="text" id="country_name" name="country_name" class="form-control" value="<%= @trip.country_name %>">
-    <!-- Input for country_name end -->
   </div>
-  <!-- Label and input for country_name end -->
 
-  <!-- Label and input for image start -->
   <div class="form-group">
     <label for="image">
       Image
     </label>
 
-    <!-- Input for image start -->
     <input type="file" id="image" name="image" class="form-control">
-    <!-- Input for image end -->
   </div>
-  <!-- Label and input for image end -->
 
-  <!-- Label and input for owner_id start -->
-  <!-- Input for "owner_id" start -->
   <input type="hidden" name="owner_id" value="<%= current_user.id %>">
-  <!-- Input for "owner_id" end -->
-  <!-- Label and input for owner_id end -->
 
-  <!-- Label and input for city_visited start -->
   <div class="form-group">
     <label for="city_visited">
       City visited
     </label>
 
-    <!-- Input for city_visited start -->
     <input type="text" id="city_visited" name="city_visited" class="form-control" value="<%= @trip.city_visited %>">
-    <!-- Input for city_visited end -->
   </div>
-  <!-- Label and input for city_visited end -->
 
-  <!-- Label and input for rating start -->
   <div class="form-group">
     <label for="rating">
       Rating
     </label>
 
-    <!-- Input for rating start -->
     <input type="text" id="rating" name="rating" class="form-control" value="<%= @trip.rating %>">
-    <!-- Input for rating end -->
   </div>
-  <!-- Label and input for rating end -->
 
-  <!-- Label and input for must_do start -->
   <div class="form-group">
     <label for="must_do">
       Must do
     </label>
 
-    <!-- Input for must_do start -->
     <input type="text" id="must_do" name="must_do" class="form-control" value="<%= @trip.must_do %>">
-    <!-- Input for must_do end -->
   </div>
-  <!-- Label and input for must_do end -->
 
   <button class="btn btn-block btn-outline-secondary">
     Create trip

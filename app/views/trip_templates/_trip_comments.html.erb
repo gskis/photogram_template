@@ -10,28 +10,22 @@
   <ul class="list-group list-group-flush">
     <% @trip.comments.each do |comment| %>
       <li class="list-group-item d-flex align-items-center justify-content-between">
-        <!-- Show link start -->
         <a href="/comments/<%= comment.id %>">
           <%= comment.body %>
         </a>
-        <!-- Show link end -->
 
-        <!-- Delete link start -->
         <%if current_user == comment.commenter %>
           <a href="/delete_comment_from_trip/<%= comment.id %>">
             Delete
           </a>
         <% end %>
-        <!-- Delete link end -->
 
       </li>
     <% end %>
 
     <div class="card-footer">
       <div class="collapse" id="trip_comments_new_form">
-        <!-- New associationcollection form start -->
         <%= render partial: "trip_templates/trip_comments_new_form" %>
-        <!-- New associationcollection form end -->
       </div>
     </div>
 

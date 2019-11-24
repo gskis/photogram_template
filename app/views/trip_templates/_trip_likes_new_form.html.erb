@@ -1,17 +1,8 @@
-<!-- Form like start -->
 <form action="/create_like_from_trip" method="post">
-<!-- Form like end -->
 
-  <!-- Label and input for user_id start -->
-  <!-- Input for "user_id" start -->
   <input type="hidden" name="user_id" value="<%= current_user.id %>">
-  <!-- Input for "user_id" end -->
-  <!-- Label and input for user_id end -->
 
-  <!-- Label and input for photo_id start -->
-  <!-- Input for photo_id start -->
   <input type="hidden" name="photo_id" value="<%= @trip.id %>">
-  <!-- Input for photo_id end -->
 
   <button class="btn btn-block btn-outline-secondary">
     Create like

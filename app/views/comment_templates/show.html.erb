@@ -11,7 +11,6 @@
         </a>
       </div>
 
-      <!-- Edit link comment start -->
       <div class="col">
         <% if current_user == @comment.commenter %>
           <a href="/comments/<%= @comment.id %>/edit" class="btn btn-block btn-sm btn-outline-secondary">
@@ -19,9 +18,7 @@
           </a>
         <% end %>
       </div>
-      <!-- Edit link comment end -->
 
-      <!-- Delete link comment start -->
       <div class="col">
         <% if current_user == @comment.commenter %>
           <a href="/delete_comment/<%= @comment.id %>" class="btn btn-block btn-sm btn-outline-secondary">
@@ -29,23 +26,19 @@
           </a>
         <% end %>
       </div>
-      <!-- Delete link comment end -->
     </div>
 
     <dl>
       <dt>
         Body
       </dt>
-      <!-- Display body start -->
       <dd>
         <%= @comment.body %>
       </dd>
-      <!-- Display body end -->
 
       <dt>
         Commenter
       </dt>
-      <!-- Display commenter_id start -->
       <dd>
         <% if @comment.commenter.present? %>
           <a href="/users/<%= @comment.commenter_id %>">
@@ -53,12 +46,10 @@
           </a>
         <% end %>
       </dd>
-      <!-- Display commenter_id end -->
 
       <dt>
         Trip
       </dt>
-      <!-- Display trip_id start -->
       <dd>
         <% if @comment.photo.present? %>
           <a href="/trips/<%= @comment.trip_id %>">
@@ -66,28 +57,21 @@
           </a>
         <% end %>
       </dd>
-      <!-- Display trip_id end -->
 
       <dt>
         Created at
       </dt>
-      <!-- Display created_at start -->
       <dd>
         <%= time_ago_in_words(@comment.created_at) %> ago
       </dd>
-      <!-- Display created_at end -->
 
       <dt>
         Updated at
       </dt>
-      <!-- Display updated_at start -->
       <dd>
         <%= time_ago_in_words(@comment.updated_at) %> ago
       </dd>
-      <!-- Display updated_at end -->
     </dl>
   </div>
 </div>
 
-<!-- Show Page Customization starts -->
-<!-- Show Page Customization end -->
