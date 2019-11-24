@@ -1,4 +1,24 @@
+require 'open-uri'
 class Trip < ApplicationRecord
+  before_validation :geocode_city_visited
+
+  def geocode_city_visited
+    if self.city_visited.present?
+      url = "http://maps.googleapis.com/maps/api/geocode/json?address=#{URI.encode(self.city_visited)}"
+
+      raw_data = open(url).read
+
+      parsed_data = JSON.parse(raw_data)
+
+      if parsed_data["results"].present?
+        self.city_visited_latitude = parsed_data["results"][0]["geometry"]["location"]["lat"]
+
+        self.city_visited_longitude = parsed_data["results"][0]["geometry"]["location"]["lng"]
+
+        self.city_visited_formatted_address = parsed_data["results"][0]["formatted_address"]
+      end
+    end
+  end
   mount_uploader :image, ImageUploader
 
   # Direct associations

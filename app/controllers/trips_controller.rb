@@ -11,6 +11,11 @@ class TripsController < ApplicationController
 
   def index
     @trips = Trip.all
+    @location_hash = Gmaps4rails.build_markers(@trips.where.not(:city_visited_latitude => nil)) do |trip, marker|
+      marker.lat trip.city_visited_latitude
+      marker.lng trip.city_visited_longitude
+      marker.infowindow "<h5><a href='/trips/#{trip.id}'>#{trip.country_name}</a></h5><small>#{trip.city_visited_formatted_address}</small>"
+    end
 
     render("trip_templates/index.html.erb")
   end

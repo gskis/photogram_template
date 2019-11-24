@@ -65,7 +65,9 @@
       </dt>
       <!-- Display city_visited start -->
       <dd>
-        <%= @trip.city_visited %>
+        <div>
+          <%= render partial: "trip_templates/one_photo_map" %>
+        </div>
       </dd>
       <!-- Display city_visited end -->
 
