@@ -48,7 +48,7 @@
     </label>
 
     <!-- Input for trip_id start -->
-    <input type="text" id="trip_id" name="trip_id" class="form-control" value="<%= @comment.trip_id %>">
+    <%= select_tag(:trip_id, options_from_collection_for_select(Trip.all, :id, :country_name, @comment.trip_id), :class => "form-control") %>
     <!-- Input for trip_id end -->
   </div>
   <!-- Label and input for trip_id end -->
