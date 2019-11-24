@@ -13,17 +13,21 @@
 
       <!-- Edit link comment start -->
       <div class="col">
-        <a href="/comments/<%= @comment.id %>/edit" class="btn btn-block btn-outline-secondary">
-          Edit comment
-        </a>
+        <% if current_user == @comment.commenter %>
+          <a href="/comments/<%= @comment.id %>/edit" class="btn btn-block btn-sm btn-outline-secondary">
+            Edit comment
+          </a>
+        <% end %>
       </div>
       <!-- Edit link comment end -->
 
       <!-- Delete link comment start -->
       <div class="col">
-        <a href="/delete_comment/<%= @comment.id %>" class="btn btn-block btn-outline-secondary">
-          Delete comment
-        </a>
+        <% if current_user == @comment.commenter %>
+          <a href="/delete_comment/<%= @comment.id %>" class="btn btn-block btn-sm btn-outline-secondary">
+            Delete comment
+          </a>
+        <% end %>
       </div>
       <!-- Delete link comment end -->
     </div>
