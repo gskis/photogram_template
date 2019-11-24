@@ -1,0 +1,56 @@
+<h1>
+  Edit comment #<%= @comment.id %>
+</h1>
+
+<hr>
+
+<!-- Form comment start -->
+<form action="/update_comment/<%= @comment.id %>" method="post">
+<!-- Form comment end -->
+
+  <!-- Label and input for body start -->
+  <div class="form-group">
+    <label for="body">
+      Body
+    </label>
+
+    <!-- Input for body start -->
+    <textarea id="body" name="body" class="form-control" rows="3"><%= @comment.body %></textarea>
+    <!-- Input for body end -->
+  </div>
+  <!-- Label and input for body end -->
+
+  <!-- Label and input for commenter_id start -->
+  <div class="form-group">
+    <label for="commenter_id">
+      Commenter
+    </label>
+
+    <!-- Input for commenter_id start -->
+    <input type="text" id="commenter_id" name="commenter_id" class="form-control" value="<%= @comment.commenter_id %>">
+    <!-- Input for commenter_id end -->
+  </div>
+  <!-- Label and input for commenter_id end -->
+
+  <!-- Label and input for trip_id start -->
+  <div class="form-group">
+    <label for="trip_id">
+      Trip
+    </label>
+
+    <!-- Input for trip_id start -->
+    <input type="text" id="trip_id" name="trip_id" class="form-control" value="<%= @comment.trip_id %>">
+    <!-- Input for trip_id end -->
+  </div>
+  <!-- Label and input for trip_id end -->
+
+  <button class="btn btn-block btn-outline-secondary">
+    Update comment
+  </button>
+</form>
+
+<hr>
+
+<a href="/comments">
+  Go back
+</a>
