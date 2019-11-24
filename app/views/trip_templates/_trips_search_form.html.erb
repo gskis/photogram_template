@@ -1,0 +1,141 @@
+<%= search_form_for @q, :class => collapse_search_form, :id => "trips_filters" do |f| %>
+  <p class="lead">Narrow results:</p>
+
+  <div class="form-group">
+    <%= f.label :country_name_cont, "Country name contains" %>
+    <%= f.text_field :country_name_cont, :class => "form-control", :placeholder => "Country name contains" %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :must_do_cont, "Must do contains" %>
+    <%= f.text_field :must_do_cont, :class => "form-control", :placeholder => "Must do contains" %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :rating, "Rating" %>
+    <div class="row">
+      <div class='col-md-6 mb-1'>
+        <%= f.text_field :rating_gteq, :class => "form-control", :placeholder => "Rating greater than or equal to" %>
+      </div>
+      <div class='col-md-6'>
+        <%= f.text_field :rating_lteq, :class => "form-control", :placeholder => "Rating less than or equal to" %>
+      </div>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :created_at, "Created at" %>
+    <div class="row">
+      <div class='col-md-6 mb-1'>
+        <div class='input-group date' id='created_atgteqPicker' data-target-input="nearest">
+          <%= f.text_field :created_at_gteq, :class => "form-control datetimepicker-input", :placeholder => "Created at greater than or equal to", :data => {:target => '#created_atgteqPicker'} %>
+          <div class="input-group-append" data-target='#created_atgteqPicker' data-toggle="datetimepicker">
+            <div class="input-group-text"><i class="fa fa-calendar"></i></div>
+          </div>
+        </div>
+      </div>
+
+      <div class='col-md-6'>
+        <div class='input-group date' id='created_atlteqPicker' data-target-input="nearest">
+          <%= f.text_field :created_at_lteq, :class => "form-control datetimepicker-input", :placeholder => "Created at less than or equal to", :data => {:target => '#created_atlteqPicker'} %>
+          <div class="input-group-append" data-target='#created_atlteqPicker' data-toggle="datetimepicker">
+            <div class="input-group-text"><i class="fa fa-calendar"></i></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script type="text/javascript">
+      $(function () {
+          $('#created_atgteqPicker').datetimepicker({
+              format: 'YYYY-MM-DD hh:mm:SS'
+          });
+          $('#created_atlteqPicker').datetimepicker({
+              useCurrent: false,
+              format: 'YYYY-MM-DD hh:mm:SS'
+          });
+          $('#created_atgteqPicker').on("dp.change", function (e) {
+              $('#created_atlteqPicker').data("DateTimePicker").minDate(e.date);
+          });
+          $('#created_atlteqPicker').on("dp.change", function (e) {
+              $('#created_atgteqPicker').data("DateTimePicker").maxDate(e.date);
+          });
+      });
+  </script>
+
+
+  <div class="form-group">
+    <%= f.label :owner_username_cont, "User username contains" %>
+    <%= f.text_field :owner_username_cont, :class => "form-control", :placeholder => "User username contains" %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :created_at, "Like Created at" %>
+    <div class="row">
+      <div class='col-md-6 mb-1'>
+        <div class='input-group date' id='likesgteqcreated_atPicker' data-target-input="nearest">
+          <%= f.text_field :likes_created_at_gteq, :class => "form-control datetimepicker-input", :placeholder => "Like Created at greater than or equal to", :data => {:target => '#likesgteqcreated_atPicker'} %>
+          <div class="input-group-append" data-target='#likesgteqcreated_atPicker' data-toggle="datetimepicker">
+            <div class="input-group-text"><i class="fa fa-calendar"></i></div>
+          </div>
+        </div>
+      </div>
+
+      <div class='col-md-6'>
+        <div class='input-group date' id='likeslteqcreated_atPicker' data-target-input="nearest">
+          <%= f.text_field :likes_created_at_lteq, :class => "form-control datetimepicker-input", :placeholder => "Like Created at less than or equal to", :data => {:target => '#likeslteqcreated_atPicker'} %>
+          <div class="input-group-append" data-target='#likeslteqcreated_atPicker' data-toggle="datetimepicker">
+            <div class="input-group-text"><i class="fa fa-calendar"></i></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script type="text/javascript">
+      $(function () {
+          $('#likesgteqcreated_atPicker').datetimepicker({
+              format: 'YYYY-MM-DD hh:mm:SS'
+          });
+          $('#likeslteqcreated_atPicker').datetimepicker({
+              useCurrent: false,
+              format: 'YYYY-MM-DD hh:mm:SS'
+          });
+          $('#likesgteqcreated_atPicker').on("dp.change", function (e) {
+              $('#likeslteqcreated_atPicker').data("DateTimePicker").minDate(e.date);
+          });
+          $('#likeslteqcreated_atPicker').on("dp.change", function (e) {
+              $('#likesgteqcreated_atPicker').data("DateTimePicker").maxDate(e.date);
+          });
+      });
+  </script>
+
+  <div class="form-group">
+    <%= f.label :comments_body_cont, "Comment body contains" %>
+    <%= f.text_field :comments_body_cont, :class => "form-control", :placeholder => "Comment body contains" %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :fan_followers_username_cont, "User username contains" %>
+    <%= f.text_field :fan_followers_username_cont, :class => "form-control", :placeholder => "User username contains" %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :followers_username_cont, "User username contains" %>
+    <%= f.text_field :followers_username_cont, :class => "form-control", :placeholder => "User username contains" %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :fans_username_cont, "User username contains" %>
+    <%= f.text_field :fans_username_cont, :class => "form-control", :placeholder => "User username contains" %>
+  </div>
+
+
+  <%= f.submit :class => "btn btn-primary btn-block mb-1" %>
+
+  <a href="/trips" class="btn btn-outline-secondary btn-block mb-1">Clear filters</a>
+
+<% end %>
+
+<a class="btn btn-outline-secondary btn-block mb-1" data-toggle="collapse" href="#trips_filters">
+  Show filters
+</a>
