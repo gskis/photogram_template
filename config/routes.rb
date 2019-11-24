@@ -1,4 +1,23 @@
 Rails.application.routes.draw do
+  # Routes for the Follow request resource:
+
+  # CREATE
+  get("/follow_requests/new", { :controller => "follow_requests", :action => "new_form" })
+  post("/create_follow_request", { :controller => "follow_requests", :action => "create_row" })
+
+  # READ
+  get("/follow_requests", { :controller => "follow_requests", :action => "index" })
+  get("/follow_requests/:id_to_display", { :controller => "follow_requests", :action => "show" })
+
+  # UPDATE
+  get("/follow_requests/:prefill_with_id/edit", { :controller => "follow_requests", :action => "edit_form" })
+  post("/update_follow_request/:id_to_modify", { :controller => "follow_requests", :action => "update_row" })
+
+  # DELETE
+  get("/delete_follow_request/:id_to_remove", { :controller => "follow_requests", :action => "destroy_row" })
+
+  #------------------------------
+
   # Routes for the Like resource:
 
   # CREATE
