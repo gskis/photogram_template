@@ -13,17 +13,21 @@
 
       <!-- Edit link follow_request start -->
       <div class="col">
-        <a href="/follow_requests/<%= @follow_request.id %>/edit" class="btn btn-block btn-outline-secondary">
-          Edit follow request
-        </a>
+        <% if current_user == @follow_request.sender %>
+          <a href="/follow_requests/<%= @follow_request.id %>/edit" class="btn btn-block btn-sm btn-outline-secondary">
+            Edit follow_request
+          </a>
+        <% end %>
       </div>
       <!-- Edit link follow_request end -->
 
       <!-- Delete link follow_request start -->
       <div class="col">
-        <a href="/delete_follow_request/<%= @follow_request.id %>" class="btn btn-block btn-outline-secondary">
-          Delete follow request
-        </a>
+        <% if current_user == @follow_request.sender %>
+          <a href="/delete_follow_request/<%= @follow_request.id %>" class="btn btn-block btn-sm btn-outline-secondary">
+            Delete follow_request
+          </a>
+        <% end %>
       </div>
       <!-- Delete link follow_request end -->
     </div>
