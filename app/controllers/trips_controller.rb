@@ -49,7 +49,7 @@ class TripsController < ApplicationController
 
     @trip.country_name = params.fetch("country_name")
     @trip.image = params.fetch("image") if params.key?("image")
-    @trip.owner_id = params.fetch("owner_id")
+    
     @trip.city_visited = params.fetch("city_visited")
     @trip.rating = params.fetch("rating")
     @trip.must_do = params.fetch("must_do")
