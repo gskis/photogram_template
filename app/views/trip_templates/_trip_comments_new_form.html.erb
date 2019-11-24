@@ -15,15 +15,9 @@
   <!-- Label and input for body end -->
 
   <!-- Label and input for commenter_id start -->
-  <div class="form-group">
-    <label for="commenter_id">
-      Commenter
-    </label>
-
-    <!-- Input for commenter_id start -->
-    <%= select_tag(:commenter_id, options_from_collection_for_select(User.all, :id, :username, @comment.commenter_id), :class => "form-control") %>
-    <!-- Input for commenter_id end -->
-  </div>
+  <!-- Input for "commenter_id" start -->
+  <input type="hidden" name="commenter_id" value="<%= current_user.id %>">
+  <!-- Input for "commenter_id" end -->
   <!-- Label and input for commenter_id end -->
 
   <!-- Label and input for trip_id start -->
