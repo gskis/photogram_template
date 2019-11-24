@@ -5,4 +5,6 @@ class FollowRequest < ApplicationRecord
 
   # Validations
 
+  validates :sender_id, :presence => true
+
 end
