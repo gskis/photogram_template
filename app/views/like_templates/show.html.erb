@@ -13,17 +13,21 @@
 
       <!-- Edit link like start -->
       <div class="col">
-        <a href="/likes/<%= @like.id %>/edit" class="btn btn-block btn-outline-secondary">
-          Edit like
-        </a>
+        <% if current_user == @like.user %>
+          <a href="/likes/<%= @like.id %>/edit" class="btn btn-block btn-sm btn-outline-secondary">
+            Edit like
+          </a>
+        <% end %>
       </div>
       <!-- Edit link like end -->
 
       <!-- Delete link like start -->
       <div class="col">
-        <a href="/delete_like/<%= @like.id %>" class="btn btn-block btn-outline-secondary">
-          Delete like
-        </a>
+        <% if current_user == @like.user %>
+          <a href="/delete_like/<%= @like.id %>" class="btn btn-block btn-sm btn-outline-secondary">
+            Delete like
+          </a>
+        <% end %>
       </div>
       <!-- Delete link like end -->
     </div>
