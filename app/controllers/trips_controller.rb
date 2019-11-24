@@ -23,7 +23,7 @@ class TripsController < ApplicationController
     @trip = Trip.new
 
     @trip.country_name = params.fetch("country_name")
-    @trip.image = params.fetch("image")
+    @trip.image = params.fetch("image") if params.key?("image")
     @trip.owner_id = params.fetch("owner_id")
     @trip.city_visited = params.fetch("city_visited")
     @trip.rating = params.fetch("rating")
@@ -48,7 +48,7 @@ class TripsController < ApplicationController
     @trip = Trip.find(params.fetch("id_to_modify"))
 
     @trip.country_name = params.fetch("country_name")
-    @trip.image = params.fetch("image")
+    @trip.image = params.fetch("image") if params.key?("image")
     @trip.owner_id = params.fetch("owner_id")
     @trip.city_visited = params.fetch("city_visited")
     @trip.rating = params.fetch("rating")

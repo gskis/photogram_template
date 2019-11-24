@@ -6,7 +6,7 @@
 <hr>
 
 <!-- Form trip start -->
-<form action="/create_trip" method="post">
+<form action="/create_trip" method="post" enctype="multipart/form-data">
 <!-- Form trip end -->
 
   <!-- Label and input for country_name start -->
@@ -28,7 +28,7 @@
     </label>
 
     <!-- Input for image start -->
-    <input type="text" id="image" name="image" class="form-control">
+    <input type="file" id="image" name="image" class="form-control">
     <!-- Input for image end -->
   </div>
   <!-- Label and input for image end -->
