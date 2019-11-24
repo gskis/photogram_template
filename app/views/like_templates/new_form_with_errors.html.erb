@@ -39,7 +39,7 @@
     </label>
 
     <!-- Input for photo_id start -->
-    <input type="text" id="photo_id" name="photo_id" class="form-control" value="<%= @like.photo_id %>">
+    <%= select_tag(:photo_id, options_from_collection_for_select(Trip.all, :id, :country_name, @like.photo_id), :class => "form-control") %>
     <!-- Input for photo_id end -->
   </div>
   <!-- Label and input for photo_id end -->
