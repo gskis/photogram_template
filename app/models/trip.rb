@@ -1,6 +1,9 @@
 class Trip < ApplicationRecord
   # Direct associations
 
+  has_many   :comments,
+             :dependent => :destroy
+
   has_many   :likes,
              :foreign_key => "photo_id",
              :dependent => :destroy
