@@ -1,4 +1,23 @@
 Rails.application.routes.draw do
+  # Routes for the Like resource:
+
+  # CREATE
+  get("/likes/new", { :controller => "likes", :action => "new_form" })
+  post("/create_like", { :controller => "likes", :action => "create_row" })
+
+  # READ
+  get("/likes", { :controller => "likes", :action => "index" })
+  get("/likes/:id_to_display", { :controller => "likes", :action => "show" })
+
+  # UPDATE
+  get("/likes/:prefill_with_id/edit", { :controller => "likes", :action => "edit_form" })
+  post("/update_like/:id_to_modify", { :controller => "likes", :action => "update_row" })
+
+  # DELETE
+  get("/delete_like/:id_to_remove", { :controller => "likes", :action => "destroy_row" })
+
+  #------------------------------
+
   # Routes for the Trip resource:
 
   # CREATE

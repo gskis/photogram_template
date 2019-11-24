@@ -1,0 +1,53 @@
+<!-- Validation failure messages -->
+<% if @like.errors.any? %>
+  <% @like.errors.full_messages.each do |message| %>
+    <div class="alert">
+      <%= message %>
+    </div>
+  <% end %>
+<% end %>
+
+<h1>
+  Edit like #<%= @like.id %>
+</h1>
+
+<hr>
+
+<!-- Form like start -->
+<form action="/update_like/<%= @like.id %>" method="post">
+<!-- Form like end -->
+
+  <!-- Label and input for user_id start -->
+  <div class="form-group">
+    <label for="user_id">
+      User
+    </label>
+
+    <!-- Input for user_id start -->
+    <input type="text" id="user_id" name="user_id" class="form-control" value="<%= @like.user_id %>">
+    <!-- Input for user_id end -->
+  </div>
+  <!-- Label and input for user_id end -->
+
+  <!-- Label and input for photo_id start -->
+  <div class="form-group">
+    <label for="photo_id">
+      Photo
+    </label>
+
+    <!-- Input for photo_id start -->
+    <input type="text" id="photo_id" name="photo_id" class="form-control" value="<%= @like.photo_id %>">
+    <!-- Input for photo_id end -->
+  </div>
+  <!-- Label and input for photo_id end -->
+
+  <button class="btn btn-block btn-outline-secondary">
+    Update like
+  </button>
+</form>
+
+<hr>
+
+<a href="/likes">
+  Go back
+</a>

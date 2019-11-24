@@ -1,0 +1,92 @@
+<div class="row mb-3">
+  <div class="col-md-12">
+    <h1>
+      All likes
+    </h1>
+
+    <a href="/likes/new" class="btn btn-block btn-outline-secondary">
+      Add a new like
+    </a>
+  </div>
+</div>
+
+<!-- Ransack Code start -->
+
+<!-- Ransack Code end -->
+
+<!-- Location Map Code start -->
+
+<!-- Location Map Code end -->
+
+<hr>
+
+<div class="row mb-3">
+  <div class="col-md-12">
+    <table class="table">
+      <tr>
+        <th>
+          ID
+        </th>
+
+        <th>
+          User
+        </th>
+
+        <th>
+          Photo
+        </th>
+
+        <th>
+          Created at
+        </th>
+
+        <th>
+          Updated at
+        </th>
+
+        <th>
+        </th>
+      </tr>
+
+      <% @likes.each do |like| %>
+      <tr>
+        <!-- Display like.id start -->
+        <td>
+          <%= like.id %>
+        </td>
+        <!-- Display like.id end -->
+
+        <!-- Display like.user_id start -->
+        <td>
+          <%= like.user_id %>
+        </td>
+        <!-- Display like.user_id end -->
+
+        <!-- Display like.photo_id start -->
+        <td>
+          <%= like.photo_id %>
+        </td>
+        <!-- Display like.photo_id end -->
+
+        <!-- Display like.created_at start -->
+        <td>
+          <%= time_ago_in_words(like.created_at) %> ago
+        </td>
+        <!-- Display like.created_at end -->
+
+        <!-- Display like.updated_at start -->
+        <td>
+          <%= time_ago_in_words(like.updated_at) %> ago
+        </td>
+        <!-- Display like.updated_at end -->
+
+        <td>
+          <a href="/likes/<%= like.id %>">
+            Show details
+          </a>
+        </td>
+      </tr>
+      <% end %>
+    </table>
+  </div>
+</div>
