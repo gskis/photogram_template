@@ -5,4 +5,6 @@ class Comment < ApplicationRecord
 
   # Validations
 
+  validates :trip_id, :presence => true
+
 end

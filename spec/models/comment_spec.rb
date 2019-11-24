@@ -11,6 +11,8 @@ RSpec.describe Comment, type: :model do
     end
 
     describe "Validations" do
+
+    it { should validate_presence_of(:trip_id) }
       
     end
 end
