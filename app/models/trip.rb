@@ -5,4 +5,6 @@ class Trip < ApplicationRecord
 
   # Validations
 
+  validates :owner_id, :presence => true
+
 end
