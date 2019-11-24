@@ -53,6 +53,22 @@ class FollowRequestsController < ApplicationController
     end
   end
 
+  def destroy_row_from_sender
+    @follow_request = FollowRequest.find(params.fetch("id_to_remove"))
+
+    @follow_request.destroy
+
+    redirect_to("/users/#{@follow_request.sender_id}", notice: "FollowRequest deleted successfully.")
+  end
+
+  def destroy_row_from_recipient
+    @follow_request = FollowRequest.find(params.fetch("id_to_remove"))
+
+    @follow_request.destroy
+
+    redirect_to("/users/#{@follow_request.recipient_id}", notice: "FollowRequest deleted successfully.")
+  end
+
   def destroy_row
     @follow_request = FollowRequest.find(params.fetch("id_to_remove"))
 
