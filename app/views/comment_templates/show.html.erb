@@ -47,7 +47,11 @@
       </dt>
       <!-- Display commenter_id start -->
       <dd>
-        <%= @comment.commenter_id %>
+        <% if @comment.commenter.present? %>
+          <a href="/users/<%= @comment.commenter_id %>">
+            <%= @comment.commenter.username %>
+          </a>
+        <% end %>
       </dd>
       <!-- Display commenter_id end -->
 
@@ -56,7 +60,11 @@
       </dt>
       <!-- Display trip_id start -->
       <dd>
-        <%= @comment.trip_id %>
+        <% if @comment.photo.present? %>
+          <a href="/trips/<%= @comment.trip_id %>">
+            <%= @comment.photo.country_name %>
+          </a>
+        <% end %>
       </dd>
       <!-- Display trip_id end -->
 

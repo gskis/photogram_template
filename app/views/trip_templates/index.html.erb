@@ -90,7 +90,11 @@
 
         <!-- Display trip.owner_id start -->
         <td>
-          <%= trip.owner.username %>
+          <% if trip.owner.present? %>
+            <a href="/users/<%= trip.owner.id %>">
+              <%= trip.owner.username %>
+            </a>
+          <% end %>
         </td>
         <!-- Display trip.owner_id end -->
 

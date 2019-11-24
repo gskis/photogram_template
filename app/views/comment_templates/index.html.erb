@@ -68,13 +68,21 @@
 
         <!-- Display comment.commenter_id start -->
         <td>
-          <%= comment.commenter.username %>
+          <% if comment.commenter.present? %>
+            <a href="/users/<%= comment.commenter.id %>">
+              <%= comment.commenter.username %>
+            </a>
+          <% end %>
         </td>
         <!-- Display comment.commenter_id end -->
 
         <!-- Display comment.trip_id start -->
         <td>
-          <%= comment.photo.country_name %>
+          <% if comment.photo.present? %>
+            <a href="/trips/<%= comment.photo.id %>">
+              <%= comment.photo.country_name %>
+            </a>
+          <% end %>
         </td>
         <!-- Display comment.trip_id end -->
 

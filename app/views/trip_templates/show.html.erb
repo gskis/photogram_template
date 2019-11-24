@@ -56,7 +56,11 @@
       </dt>
       <!-- Display owner_id start -->
       <dd>
-        <%= @trip.owner_id %>
+        <% if @trip.owner.present? %>
+          <a href="/users/<%= @trip.owner_id %>">
+            <%= @trip.owner.username %>
+          </a>
+        <% end %>
       </dd>
       <!-- Display owner_id end -->
 

@@ -58,13 +58,21 @@
 
         <!-- Display follow_request.sender_id start -->
         <td>
-          <%= follow_request.sender.username %>
+          <% if follow_request.sender.present? %>
+            <a href="/users/<%= follow_request.sender.id %>">
+              <%= follow_request.sender.username %>
+            </a>
+          <% end %>
         </td>
         <!-- Display follow_request.sender_id end -->
 
         <!-- Display follow_request.recipient_id start -->
         <td>
-          <%= follow_request.recipient.username %>
+          <% if follow_request.recipient.present? %>
+            <a href="/users/<%= follow_request.recipient.id %>">
+              <%= follow_request.recipient.username %>
+            </a>
+          <% end %>
         </td>
         <!-- Display follow_request.recipient_id end -->
 
