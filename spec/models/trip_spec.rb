@@ -14,6 +14,8 @@ RSpec.describe Trip, type: :model do
 
     describe "InDirect Associations" do
 
+    it { should have_many(:fan_followers) }
+
     end
 
     describe "Validations" do

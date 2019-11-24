@@ -14,6 +14,10 @@ class Trip < ApplicationRecord
 
   # Indirect associations
 
+  has_many   :fan_followers,
+             :through => :fans,
+             :source => :following
+
   # Validations
 
   validates :image, :presence => true
